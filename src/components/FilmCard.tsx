@@ -33,31 +33,31 @@ export function FilmCard({ roll, onSelect }: FilmCardProps) {
           onSelect(roll, e.currentTarget);
         }
       }}
-      className={`group grid grid-cols-[1fr_auto] gap-3 p-4 transition-colors ${
-        onSelect ? "cursor-pointer hover:bg-foreground/[0.02] active:bg-foreground/[0.04]" : ""
-      }`}
+className={`group grid grid-cols-[1fr_auto] gap-4 px-5 py-5 transition-all duration-200 ${
+  onSelect ? "cursor-pointer hover:bg-white/[0.035] active:bg-white/[0.06] active:scale-[0.995]" : ""
+}`}
     >
       {/* Left column */}
       <div className="min-w-0">
-        <h3 className="text-[15px] leading-snug tracking-tight truncate">
-          <span className="font-semibold text-foreground">{roll.stock}</span>
-        </h3>
+<h3 className="text-[18px] leading-tight tracking-[-0.02em] truncate">
+  <span className="font-bold text-[#F5F1E8]">{roll.stock}</span>
+</h3>
         {roll.name && (
-          <p className="mt-0.5 text-[13px] text-muted-foreground truncate">
-            {roll.name}
-          </p>
+<p className="mt-1 text-[14px] text-[#B8B0A4] truncate">
+  {roll.name}
+</p>
         )}
-        <p className="mt-2 text-[12px] text-muted-foreground/80">
-          {dateLabel}
-        </p>
+<p className="mt-3 text-[13px] text-[#8D8D8D]">
+  {dateLabel}
+</p>
       </div>
 
       {/* Right column */}
       <div className="flex flex-col items-end justify-between text-right min-w-[120px] max-w-[48%]">
-        <p className="text-[13px] font-medium text-foreground/90 truncate max-w-full">
+        <p className="text-[13px] font-medium text-[#F3F1EC] truncate max-w-full">
           {roll.camera}
         </p>
-        <p className="mt-2 text-[12px] text-muted-foreground capitalize whitespace-nowrap">
+        <p className="mt-3 text-[13px] text-[#9A9A9A] capitalize whitespace-nowrap">
   ISO {roll.iso} · {roll.format}
 </p>
 {roll.exposureCompensation !== undefined && roll.exposureCompensation !== 0 && (

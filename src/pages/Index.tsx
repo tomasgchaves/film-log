@@ -30,7 +30,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pb-32">
+    <div className="min-h-screen bg-[#0f0f10] pb-32">
       <main className="max-w-xl mx-auto px-5 py-6 pb-6 space-y-10">
         <Section
           title="IN CAMERA"
@@ -95,12 +95,17 @@ function Section({
 }) {
   return (
     <section>
-      <div className="flex items-baseline gap-2 mb-3 px-2">
-        <h2 className="text-base font-semibold tracking-tight text-foreground">
-          {title}
-        </h2>
-        <span className="text-sm text-muted-foreground">— {count}</span>
-      </div>
+      <div className="flex items-center gap-2 mb-3 px-2">
+  <span className="h-2 w-2 rounded-full bg-[#D08943]" />
+  
+  <h2 className="text-sm font-bold tracking-[0.18em] text-[#F3F1EC]">
+    {title}
+  </h2>
+
+  <span className="text-sm text-[#8A8A8A]">
+    — {count}
+  </span>
+</div>
       {count === 0 && empty ? (
         <div className="rounded-2xl border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
           {empty}
